@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
-gem 'mysql2'
+gem 'mysql2', group: :production
+gem 'sqlite3', group: [:development, :test]
+
+
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.1'

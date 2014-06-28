@@ -8,8 +8,14 @@ mysql: &mysql
   username: "<%= ENV["C4SA_MYSQL_USER"] %>"
   password: "<%= ENV["C4SA_MYSQL_PASSWORD"] %>"
 
+  sqlite: &sqlite
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
 development:
-  <<: *mysql
+  <<: *sqlite
+  database: db/development.sqlite3
 
 production:
   <<: *mysql
